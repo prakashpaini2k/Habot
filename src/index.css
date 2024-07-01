@@ -22,14 +22,39 @@
     opacity: 0.9;
     background-blend-mode: multiply;
 }
-ul li {
+.simple-share-list{
+    display: flex;
+    gap: 16px;
+}
+ul.video li {
     position: relative;
     padding-left: 28px;
     padding-bottom: 14px;
     font-size: large    ;
 
 }
-li:before{
+.city > div{
+    position: relative; 
+}
+.city > div:hover{
+    background-color: rgb(234, 88, 12);
+    color: white;
+    transition: all;
+    &:after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 32px;
+        height: 20px;
+        background: url('./assests/right-arrow.svg');
+        background-repeat: no-repeat;
+        right: 12px;
+        bottom: 12px;
+
+    }
+
+}
+ul.video  li:before{
     content: '';
     position: absolute;
     display: block;

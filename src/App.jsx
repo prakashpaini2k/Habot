@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import SocialShare from 'react-simple-social';
+import rightArrow from './assests/right-arrow.svg';
+
 import logoLight from './assests/logo-light.svg';
 import logoDark from './assests/logo-dark.svg';
 import img1 from './assests/img1.svg';
@@ -27,9 +30,9 @@ function App() {
       <div className="header xl:container mx-auto flex justify-between px-4 py-2">
         <img className="h-30 w-40 px-6 py-2" src={logoLight} alt="logo" />
         <div className="flex justify-between gap-4 flex-row">
-          <div className="px-6 py-2 cursor-pointer">Find Suppliers</div>
-          <div className="px-6 py-2 cursor-pointer">Find Suppliers</div>
-          <button className="border-2 border-green-500 px-6 py-2 rounded text-green-700 font-medium">Login / Sign Up</button>
+          <div className="px-6 py-2 cursor-pointer text-slate-600">Find Suppliers</div>
+          <div className="px-6 py-2 cursor-pointer text-slate-600">Find Suppliers</div>
+          <button className="border-2 border-green-700 px-6 py-2 rounded text-green-700 font-semibold">Login / Sign Up</button>
         </div>
       </div>
       <div className="banner">
@@ -56,27 +59,27 @@ function App() {
           <br />
           <p className="w-4/5">Signing up with HABOT opens the door to a world of new opportunities and potential for business growth. Gain access to a vibrant community of like-minded individuals, unlock valuable resources, and take the first step towards realizing your entrepreneurial dreams.</p>
           <br />
-          <button className=" bg-green-700 px-4 py-2 rounded text-white font-medium">Sign up Today !</button>
+          <button className=" bg-green-700 flex flex-row items-center gap-8 px-4 py-2 rounded text-white font-medium">Sign up Today ! <img width={20} src={rightArrow} alt="" /></button>
         </div>
         <div className=" flex-1 ">
-          <div className="grid grid-cols-2 gap-4 text-center">
-            <div className="rounded cursor-pointer px-4 py-2 border-2 border-orange-400">Abu Dhabi</div>
-            <div className="rounded cursor-pointer px-4 py-2 border-2 border-orange-400">Dubai</div>
-            <div className="rounded cursor-pointer px-4 py-2 border-2 border-orange-400">Sharjah & Ajman</div>
-            <div className="rounded cursor-pointer px-4 py-2 border-2 border-orange-400">Fujairah</div>
-            <div className="rounded cursor-pointer px-4 py-2 border-2 border-orange-400">Ras Al Khaimah</div>
-            <div className="rounded cursor-pointer px-4 py-2 border-2 border-orange-400">Umm Al Quwain</div>
+          <div className="grid grid-cols-2 gap-4 text-center city">
+            <div className="rounded cursor-pointer font-medium px-4 py-3 border-2 border-orange-400">Abu Dhabi</div>
+            <div className="rounded cursor-pointer font-medium px-4 py-3 border-2 border-orange-400">Dubai</div>
+            <div className="rounded cursor-pointer font-medium px-4 py-3 border-2 border-orange-400">Sharjah & Ajman</div>
+            <div className="rounded cursor-pointer font-medium px-4 py-3 border-2 border-orange-400">Fujairah</div>
+            <div className="rounded cursor-pointer font-medium px-4 py-3 border-2 border-orange-400">Ras Al Khaimah</div>
+            <div className="rounded cursor-pointer font-medium px-4 py-3 border-2 border-orange-400">Umm Al Quwain</div>
           </div>
         </div>
       </div>
-      <div className=" video xl:container mx-auto px-4 py-20 flex flex-row gap-4 justify-around bg-sky-900 rounded">
+      <div className=" video xl:container mx-auto px-8 py-20 flex flex-row gap-4 justify-around bg-sky-900 rounded">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/IZLp-TZyDkQ?si=q8g6nf7DMjdcPj4L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <div className="box w-1/2 text-white">
           <div className="flex flex-row gap-8">
             <button onClick={() => { handletoggle(1) }} className={('text-2xl flex-1 font-medium px-8 py-2') + (listState === 1 && (" text-orange-600 border-orange-600 border-b-2"))}>Buyer</button>
             <button onClick={() => { handletoggle(2) }} className={('text-2xl flex-1 font-medium px-8 py-2') + (listState === 2 && (" text-orange-600 border-orange-600 border-b-2"))}>Seller</button>
           </div>
-          <ul className="width-full px-2 py-8">
+          <ul className="video width-full px-2 py-8">
             {listState === 1 && (
               <>
                 <li>Post your requirements.</li>
@@ -98,13 +101,13 @@ function App() {
         <div className="bg-cyan-50 px-4 py-20">
           <div className=" lg:container mx-auto justify-around flex flex-row gap-4">
             <div className="text-3xl font-bold">Let Suppliers <span className="underline decoration-orange-600">Find You</span></div>
-            <button className="bg-orange-600 px-8 py-2 rounded text-white font-medium">Get Verified</button>
+            <button className="bg-orange-600 px-8 py-3 rounded text-white font-medium">Get Verified</button>
           </div>
         </div>
       </div>
       <div className="py-20">
         <div className=" xl:container mx-auto items-center flex flex-col gap-4">
-          <div className="text-2xl font-bold  ">How it works? </div>
+          <div className="text-3xl font-bold  ">How it works? </div>
           <p className="w-1/2 font-medium">Buyers post their needs and review top suppliers, while suppliers complete profiles, connect with potential buyers, and build successful business relationships, sharing valuable feedback.</p>
           <div className="grid grid-cols-3 py-4 w-3/4">
             <div className="flex flex-col gap-4 items-center py-8 px-2 bg-cyan-50">
@@ -139,7 +142,7 @@ function App() {
       <div className="bg-sky-900">
         <div className="xl:container mx-auto p-8">
           <hr className="border-t-sky-700" />
-          <div className="flex text-slate-300 flex-row justify-between  px-4 py-6">
+          <div className="flex text-slate-300 items-center flex-row justify-between  px-4 py-6">
             <div className="flex flex-row gap-6">
               <div>
                 <img className="h-30 w-40 py-4" src={logoDark} alt="logo" />
@@ -164,7 +167,9 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="links"></div>
+            <div className="links">
+              <SocialShare height="30px" width="30px" theme="roundedunfilled" sites={[ 'linkedin','facebook', 'twitter','instagram']}></SocialShare>
+            </div>
           </div>
           <hr className="border-t-sky-700" />
         </div>
